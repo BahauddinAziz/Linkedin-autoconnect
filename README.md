@@ -41,7 +41,7 @@
 <!--     <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a> -->
 <!--     <br /> -->
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+<!--     <a href="https://github.com/github_username/repo_name">View Demo</a> -->
     ·
 <!--     <a href="https://github.com/github_username/repo_name/issues">Report Bug</a> -->
 <!--     · -->
@@ -82,11 +82,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email`, `email_client`, `project_title`, `project_description`
+<!-- Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email`, `email_client`, `project_title`, `project_description` -->
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<!-- <p align="right">(<a href="#top">back to top</a>)</p> -->
 
 
 
