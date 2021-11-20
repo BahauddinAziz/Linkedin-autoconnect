@@ -1,0 +1,31 @@
+{
+    "name": "Sendzilla network creator",
+    "description": "Sends connection requests to all the 'people' result on linkedin search page ",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "src/events.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.linkedin.com/search/results/people/*"
+            ],
+            "js": [
+                "src/content-script.js"
+            ]
+        }
+    ],
+
+    "permissions": [
+        "tabs",
+        "storage"
+    ],
+
+    "host_permissions": [
+        "https://www.linkedin.com/search/results/people/*"
+    ]
+}
