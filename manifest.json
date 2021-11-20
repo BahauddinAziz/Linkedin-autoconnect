@@ -4,7 +4,13 @@
     "version": "1.0",
     "manifest_version": 3,
     "action": {
-        "default_popup": "popup.html"
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "/src/images/16.png",
+            "32": "/src/images/32.png",
+            "48": "/src/images/48.png",
+            "128": "/src/images/128.png"
+        }
     },
     "background": {
         "service_worker": "src/events.js"
@@ -19,13 +25,17 @@
             ]
         }
     ],
-
     "permissions": [
         "tabs",
         "storage"
     ],
-
     "host_permissions": [
         "https://www.linkedin.com/search/results/people/*"
-    ]
+    ],
+    "icons": {
+        "16": "/src/images/16.png",
+        "32": "/src/images/32.png",
+        "48": "/src/images/48.png",
+        "128": "/src/images/128.png"
+    }
 }
