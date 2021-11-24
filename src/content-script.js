@@ -1,3 +1,4 @@
+
 const sendConnectionRequest = async () => {
     const connectButtons = document.getElementsByClassName("artdeco-button__text");
     const profiles = document.getElementsByClassName("entity-result__title-text t-16")
@@ -12,9 +13,9 @@ const sendConnectionRequest = async () => {
             name.splice((name.length - 1), 1);
             name.splice((name.length - 1), 1);
             name = name.join(" ")
-            currentButton.parentNode.click()
+            currentButton.parentNode.click();
 
-            await chrome.runtime.sendMessage({ request: {name: name, count: j+1} })
+            await chrome.runtime.sendMessage({ request: { name: name, count: j + 1 } })
             j++;
 
             await sleep(5000);
@@ -36,3 +37,10 @@ function sleep(ms) {
         setTimeout(resolve, ms);
     });
 }
+
+function nodeInsertedCallback(event) {
+    if(event.target?.classList[0] === 'artdeco-modal-overlay'){
+        event.target.children[0].children[4].children[1].click();
+    }
+};
+document.addEventListener('DOMNodeInserted', nodeInsertedCallback);
