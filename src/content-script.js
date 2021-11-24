@@ -1,3 +1,12 @@
+function Create(callback) {
+    var clicked = false;
+    return {
+        getClicked: function () { return clicked; },
+        setClicked: function (p) { clicked = p; callback(clicked); }
+    };
+}
+
+var isClicked;
 
 const sendConnectionRequest = async () => {
     const connectButtons = document.getElementsByClassName("artdeco-button__text");
@@ -14,6 +23,12 @@ const sendConnectionRequest = async () => {
             name.splice((name.length - 1), 1);
             name = name.join(" ")
             currentButton.parentNode.click();
+            await new Promise(resolve => {
+                isClicked = Create(val => {
+                    console.log(`request sent to ${name}`)
+                    resolve();
+                })
+            });
 
             await chrome.runtime.sendMessage({ request: { name: name, count: j + 1 } })
             j++;
@@ -39,8 +54,9 @@ function sleep(ms) {
 }
 
 function nodeInsertedCallback(event) {
-    if(event.target?.classList[0] === 'artdeco-modal-overlay'){
+    if (event.target?.classList[0] === 'artdeco-modal-overlay') {
         event.target.children[0].children[4].children[1].click();
+        isClicked.setClicked(true)
     }
 };
 document.addEventListener('DOMNodeInserted', nodeInsertedCallback);
