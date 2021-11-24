@@ -27,7 +27,14 @@ const sendConnectionRequest = async () => {
                 isClicked = Create(val => {
                     console.log(`request sent to ${name}`)
                     resolve();
+                    return
                 })
+                
+                setTimeout(() => {
+                    console.log("timeout")
+                    resolve();
+                    return
+                }, 20000);
             });
 
             await chrome.runtime.sendMessage({ request: { name: name, count: j + 1 } })
